@@ -1,0 +1,7 @@
+/test
+lastupdate.tmp
+*.tar.gz
+.com.apple*
+.idea
+*.svg
+*.proto
