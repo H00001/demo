@@ -1,7 +1,5 @@
 package node
 
-type Protocol int
-
 type ServerRecord struct {
 	// server name
 	ServerName string `json:"server_name"`
@@ -10,5 +8,5 @@ type ServerRecord struct {
 	// server node provide services
 	Provide []string `json:"address"`
 	// available protocols
-	Protocols []Protocol `json:"protocols"`
+	Protocols int `json:"protocols"`
 }

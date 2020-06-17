@@ -19,6 +19,6 @@ func (svc *ServerRegisteService) Regisite(ctx context.Context, record node.Serve
 	return svc.ServerRepo.AddServerNode(ctx, record)
 }
 
-func (svc *ServerRegisteService) Cancel(ctx context.Context, serverName int) {
-	svc.ServerRepo.DeleteServerNode(ctx, 1)
+func (svc *ServerRegisteService) Cancel(ctx context.Context, serverID int) {
+	svc.ServerRepo.DeleteServerNode(ctx, serverID)
 }

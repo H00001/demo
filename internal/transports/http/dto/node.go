@@ -13,7 +13,7 @@ type ServerNode struct {
 	// server node provide services
 	Provide []string `json:"provide"`
 	// available protocols
-	Protocols []node.Protocol `json:"protocols"`
+	Protocols int `json:"protocols"`
 }
 
 func NewServerRecode(s ServerNode) node.ServerRecord {
