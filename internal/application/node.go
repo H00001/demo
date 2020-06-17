@@ -8,15 +8,16 @@ import (
 
 type ServerRegisteService struct {
 	*infra.Infra
+	node node.NodeService
 }
 
 func NewServerRegisteService(infra *infra.Infra) *ServerRegisteService {
-	svc := &ServerRegisteService{infra}
+	svc := &ServerRegisteService{infra, node.NewNodeServer(infra)}
 	return svc
 }
 
 func (svc *ServerRegisteService) Regisite(ctx context.Context, record node.ServerRecord) int {
-	return svc.ServerRepo.AddServerNode(ctx, record)
+	return svc.node.AddServerNode(ctx, record)
 }
 
 func (svc *ServerRegisteService) Cancel(ctx context.Context, serverID int) {

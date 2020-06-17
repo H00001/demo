@@ -12,7 +12,6 @@ type UserService struct {
 
 func NewUserSvc(infraer *infra.Infra) *UserService {
 	svc := &UserService{infraer}
-
 	return svc
 }
 
