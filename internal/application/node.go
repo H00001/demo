@@ -2,7 +2,7 @@ package application
 
 import (
 	"context"
-	"test/internal/domain/user/entity"
+	"test/internal/domain/node"
 	"test/internal/infra"
 )
 
@@ -10,12 +10,12 @@ type ServerRegisteService struct {
 	*infra.Infra
 }
 
-func NewServerRegisteService(infraer *infra.Infra) *ServerRegisteService {
-	svc := &ServerRegisteService{infraer}
+func NewServerRegisteService(infra *infra.Infra) *ServerRegisteService {
+	svc := &ServerRegisteService{infra}
 	return svc
 }
 
-func (svc *ServerRegisteService) Regisite(ctx context.Context, record entity.ServerRecord) int {
+func (svc *ServerRegisteService) Regisite(ctx context.Context, record node.ServerRecord) int {
 	return svc.ServerRepo.AddServerNode(ctx, record)
 }
 
