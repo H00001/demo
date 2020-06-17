@@ -12,7 +12,7 @@ type TcpServer struct {
 	app *test.App
 }
 
-func NewGinServer(app *test.App) *TcpServer {
+func NewTcpServer(app *test.App) *TcpServer {
 	t := TcpServer{app: app}
 	return &t
 }
@@ -50,12 +50,10 @@ func (gs *TcpServer) handleConnection(conn net.Conn) {
 		fmt.Println("Message: ", strBuffer)
 		fmt.Println("Message len :", recvLen)
 		c.ServerNode.Regisite(buffer[:recvLen])
-		sendLen, err := conn.Write([]byte("I am server, you message :" + strBuffer))
 		if err != nil {
 			fmt.Println("send message error", err)
 		}
 		fmt.Println("send message success")
-		fmt.Println("send message len；", sendLen)
 	}
 }
 

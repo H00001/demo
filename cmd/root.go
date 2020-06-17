@@ -39,7 +39,7 @@ var rootCmd = &cobra.Command{
 
 		app.RegisterTran(http.NewGinServer(app))
 
-		app.RegisterTran(tcp.NewGinServer(app))
+		app.RegisterTran(tcp.NewTcpServer(app))
 
 		app.Start()
 		app.AwaitSignal()
