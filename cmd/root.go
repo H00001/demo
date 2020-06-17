@@ -18,6 +18,7 @@ package cmd
 import (
 	"os"
 	"test/internal/transports/http"
+	"test/internal/transports/tcp"
 
 	"github.com/spf13/cobra"
 
@@ -37,6 +38,8 @@ var rootCmd = &cobra.Command{
 		app.Infra = infra.NewInfra()
 
 		app.RegisterTran(http.NewGinServer(app))
+
+		app.RegisterTran(tcp.NewGinServer(app))
 
 		app.Start()
 		app.AwaitSignal()
