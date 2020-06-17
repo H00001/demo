@@ -8,6 +8,6 @@ POST http://localhost:8081/services/node?server_name=123&address=456&user_name=1
 Accept: */*
 Cache-Control: no-cache
 
-{"server_name":"hello","address":"456","provide":["calc","io"],"protocols":[1,2]}
+{"server_name":"localhost","address":"127.0.0.1:8000","provide":["calculator","i_o_server"],"protocols":3}
 
 ```
