@@ -3,8 +3,7 @@
 this is a demo used to register services.
 
 ## test
-test
-```http request`
+```http request
 POST http://localhost:8081/services/node?server_name=123&address=456&user_name=123&address=456
 Accept: */*
 Cache-Control: no-cache
